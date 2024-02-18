@@ -47,7 +47,7 @@
             </div>
           </div>
     </header>
-    <!-- banner ----functionality-->
+    <!-- banner ----button---functionality-->
     <div class="banner mx-auto w-4/5 mb-12 lg:mb-24">
         <div class="hero min-h-screen rounded-3xl" style="background-image: url('images/banner.png');">
             <div class="hero-overlay bg-opacity-60 rounded-3xl"></div>
@@ -55,7 +55,7 @@
               <div class="w-2/3">
                 <h1 class="mb-5 text-3xl lg:text-6xl font-extrabold">End-to-End Travel with <span class="text-[#1DD100]">AF Paribahan</span></h1>
                 <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-                <button class="btn bg-[#1DD100] text-xl border-none rounded-lg">Buy Tickets</button>
+                <button onclick="scrollToTicketSection()" class="btn bg-[#1DD100] text-xl border-none rounded-lg">Buy Tickets</button>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
         </div>
     </div>
     <!-- ticket section----functionality -->
-    <main class="mx-auto text-center bg-[#F7F8F8] rounded-t-3xl pb-14 lg:pb-28">
+    <main id="target-section" class="mx-auto text-center bg-[#F7F8F8] rounded-t-3xl pb-14 lg:pb-28">
         <!-- ticket heading -->
         <div class="mx-auto w-4/5">
             <h1 class="text-4xl font-bold pt-14 lg:pt-28">AF Paribahan</h1>
@@ -150,10 +150,12 @@
         <div class="mx-auto w-4/5 bg-white p-8 rounded-3xl mt-6 flex flex-col lg:flex-row gap-6">
             <!-- select seat left part -->
             <div class="w-full lg:w-2/3 sm:border-r-none lg:border-r-2">
+                <!-- Seat Selection Heading ---1 -->
                 <div class="text-left font-semibold text-2xl text-[#030712] pr-6">
                     <p>Select Your Seat</p>
                     <hr class="my-3 border-dashed">
                 </div>
+                <!-- Available Section -->
                 <div class="flex flex-col lg:flex-row justify-between">
                     <div class="flex gap-1">
                         <img src="images/seat-gray.png" alt="">
@@ -164,12 +166,15 @@
                         <p class="text-lg font-medium text-[#1DD100]">Selected</p>
                     </div>
                 </div>
+                <!-- button -->
                 <div class="text-right pr-6">
                     <hr class="my-3 border-dashed">
                     <button class="btn px-12"><i class="fa-solid fa-dharmachakra"></i></button>
                 </div>
+                <!-- Ticket Chart -->
                 <div class="flex flex-row gap-2 lg:gap-6 mt-6">
-                    <div class="">
+                    <!-- Serial No -->
+                    <div>
                         <ul class="space-y-1 lg:space-y-4">
                             <li class="bg-white px-2 lg:px-8 py-2 rounded-xl">A</li>
                             <li class="bg-white px-2 lg:px-8 py-2 rounded-xl">B</li>
@@ -183,48 +188,49 @@
                             <li class="bg-white px-2 lg:px-8 py-2 rounded-xl">J</li>
                         </ul>
                     </div>
+                    <!-- Tickets -->
                     <div class="w-5/6">
-                        <div class="grid grid-cols-4 gap-1 lg:gap-4">
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">A1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">A2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">A3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">A4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">B1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">B2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">B3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">B4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">C1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">C2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">C3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">C4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">D1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">D2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">D3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">D4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">E1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">E2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">E3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">E4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">F1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">F2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">F3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">F4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">G1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">G2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">G3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">G4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">H1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">H2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">H3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">H4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">I1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">I2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">I3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">I4</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">J1</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">J2</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">J3</kbd>
-                            <kbd class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl">J4</kbd>
+                        <div id="ticket-chart " class="grid grid-cols-4 gap-1 lg:gap-4">
+                            <kbd id="A1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">A1</kbd>
+                            <kbd id="A2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">A2</kbd>
+                            <kbd id="A3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">A3</kbd>
+                            <kbd id="A4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">A4</kbd>
+                            <kbd id="B1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">B1</kbd>
+                            <kbd id="B2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">B2</kbd>
+                            <kbd id="B3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">B3</kbd>
+                            <kbd id="B4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">B4</kbd>
+                            <kbd id="C1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">C1</kbd>
+                            <kbd id="C2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">C2</kbd>
+                            <kbd id="C3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">C3</kbd>
+                            <kbd id="C4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">C4</kbd>
+                            <kbd id="D1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">D1</kbd>
+                            <kbd id="D2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">D2</kbd>
+                            <kbd id="D3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">D3</kbd>
+                            <kbd id="D4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">D4</kbd>
+                            <kbd id="E1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">E1</kbd>
+                            <kbd id="E2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">E2</kbd>
+                            <kbd id="E3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">E3</kbd>
+                            <kbd id="E4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">E4</kbd>
+                            <kbd id="F1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">F1</kbd>
+                            <kbd id="F2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">F2</kbd>
+                            <kbd id="F3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">F3</kbd>
+                            <kbd id="F4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">F4</kbd>
+                            <kbd id="G1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">G1</kbd>
+                            <kbd id="G2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">G2</kbd>
+                            <kbd id="G3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">G3</kbd>
+                            <kbd id="G4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">G4</kbd>
+                            <kbd id="H1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">H1</kbd>
+                            <kbd id="H2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">H2</kbd>
+                            <kbd id="H3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">H3</kbd>
+                            <kbd id="H4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">H4</kbd>
+                            <kbd id="I1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">I1</kbd>
+                            <kbd id="I2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">I2</kbd>
+                            <kbd id="I3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">I3</kbd>
+                            <kbd id="I4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">I4</kbd>
+                            <kbd id="J1" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">J1</kbd>
+                            <kbd id="J2" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">J2</kbd>
+                            <kbd id="J3" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">J3</kbd>
+                            <kbd id="J4" class="bg-[#F7F8F8] px-2 lg:px-12 py-2 rounded-xl cursor-pointer">J4</kbd>
                         </div>
                     </div>
                 </div>

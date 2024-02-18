@@ -236,29 +236,72 @@
                 </div>
             </div>
             <!-- select seat right part -->
-            <div class="w-full lg:w-1/3">
+            <div class="w-full lg:w-1/3 inter">
                 <div class="text-left font-semibold text-2xl text-[#030712]">
-                    <p>Select Your Seat</p>
+                    <p class="raleway">Select Your Seat</p>
                     <hr class="my-3">
                 </div>
                 <!-- calculation of ticket price -->
                 <div class="bg-[#F7F8F8] rounded-xl p-8">
-                    <div class="flex flex-row justify-between">
+                    <div class="flex flex-row justify-between text-base font-medium">
                         <p>Seat</p>
                         <p>Class</p>
                         <p>Price</p>
                     </div>
                     <hr class="my-3 bg-[#03071233] border-dashed">
-                    <div class="flex flex-row justify-between">
+                    <div class="flex flex-row justify-between text-[#03071299] font-normal">
                         <p>C2</p>
                         <p>Economy</p>
                         <p>550</p>
                     </div>
                     <hr class="my-3 bg-[#03071233] border-dashed">
-                    <div class="flex flex-row justify-between">
+                    <div class="flex flex-row justify-between text-base font-medium">
                         <p>Total Price</p>
                         <p>BDT <span>1100</span></p>
                     </div>
+                    <!-- coupon code input -->
+                    <div class="mb-6 lg:mb-0">
+                        <label class="input flex flex-col lg:flex-row items-center gap-0 lg:gap-2 p-4 my-6">
+                            <input type="text" class="grow" placeholder="Have any coupon?" />
+                            <button class="btn bg-[#1DD100] text-white hidden lg:block">Apply</button>
+                        </label>
+                        <button class="btn bg-[#1DD100] text-white block lg:hidden">Apply</button>
+                    </div>
+                    <div class="flex flex-row justify-between text-base font-medium">
+                        <p>Grand Total</p>
+                        <p>BDT <span>1100</span></p>
+                    </div>
+                </div>
+                <!-- Passenger Input-->
+                <div class="mt-6">
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-semibold">Passenger Name*</span>
+                        </div>
+                        <input type="text" placeholder="Enter your name" class="input input-bordered w-full max-w-xs" />
+                    </label>
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-semibold">Phone Number*</span>
+                        </div>
+                        <input type="number" placeholder="Enter your phone number" class="input input-bordered w-full max-w-xs" />
+                    </label>
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-semibold">Email ID</span>
+                        </div>
+                        <input type="email" placeholder="Enter your email id" class="input input-bordered w-full max-w-xs" />
+                    </label>
+                </div>
+
+                <!-- button-Next----Functionality -->
+                <div class="my-6">
+                    <button class=" btn raleway bg-[#1DD100] w-full text-white">Next</button>
+                </div>
+                <!-- terms and conditions -->
+                <div>
+                    <a >Terms and conditions</a>
+                    <a class="text-">Cancellation Policy</a>
                 </div>
             </div>
         </div>

@@ -7,9 +7,22 @@
     <!-- Daisy UI & Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font Raleway & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .raleway{
+            font-family: "Raleway", sans-serif;
+        }
+        .andika{
+            font-family: "Andika", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
+<body class="raleway">
+    <!-- header -->
+    <header class="mx-auto w-4/5">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
               <div class="dropdown">
@@ -18,40 +31,39 @@
                 </div>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                   <li><a>Home</a></li>
-                  <li>
-                    <a>About</a>
-                    <ul class="p-2">
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                    </ul>
-                  </li>
+                  <li><a>About</a></li>
                   <li><a>Destination</a></li>
                   <li><a>Search</a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost text-xl">AF-Ticket</a>
+              <a class="btn btn-ghost text-4xl font-extrabold">AF-Ticket</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1">
                 <li><a>Home</a></li>
-                <li>
-                  <details>
-                    <summary>About</summary>
-                    <ul class="p-2">
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                    </ul>
-                  </details>
-                </li>
+                <li><a>About</a></li>
                 <li><a>Destination</a></li>
                 <li><a>Search</a></li>
               </ul>
             </div>
             <div class="navbar-end">
-              <a class="btn">Bus</a>
+              <button class="btn bg-[#1DD1001A] border border-[#1DD10066] border-[1px] text-[#1DD100] font-bold text-xl">Bus <img src="images/bus-icon.png" alt=""></button>
             </div>
           </div>
     </header>
+    <!-- banner -->
+    <div class="banner mx-auto w-4/5">
+        <div class="hero min-h-screen rounded-3xl" style="background-image: url('images/banner.png');">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="w-2/3">
+                <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with <span class="text-[#1DD100]">AF Paribahan</span></h1>
+                <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+                <button class="btn bg-[#1DD100] text-xl border-none rounded-lg">Buy Tickets</button>
+              </div>
+            </div>
+          </div>
+    </div>
     <main>
 
     </main>

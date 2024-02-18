@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-Paribahan</title>
+    <title>AF-Paribahan</title>
     <!-- Daisy UI & Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font Raleway & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         .raleway{
             font-family: "Raleway", sans-serif;
         }
-        .andika{
-            font-family: "Andika", sans-serif;
+        .inter{
+            font-family: "Inter", sans-serif;
         }
     </style>
 </head>
 <body class="raleway">
     <!-- header -->
-    <header class="mx-auto w-4/5">
+    <header class="mx-auto w-4/5 pt-4 pb-7">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
               <div class="dropdown">
@@ -52,17 +52,50 @@
           </div>
     </header>
     <!-- banner -->
-    <div class="banner mx-auto w-4/5">
+    <div class="banner mx-auto w-4/5 mb-24">
         <div class="hero min-h-screen rounded-3xl" style="background-image: url('images/banner.png');">
-            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-overlay bg-opacity-60 rounded-3xl"></div>
             <div class="hero-content text-center text-neutral-content">
               <div class="w-2/3">
-                <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with <span class="text-[#1DD100]">AF Paribahan</span></h1>
+                <h1 class="mb-5 text-4xl lg:text-6xl font-extrabold">End-to-End Travel with <span class="text-[#1DD100]">AF Paribahan</span></h1>
                 <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
                 <button class="btn bg-[#1DD100] text-xl border-none rounded-lg">Buy Tickets</button>
               </div>
             </div>
           </div>
+    </div>
+    <!-- best offers -->
+    <div class="best-offers mx-auto w-4/5">
+        <h1 class="text-center text-4xl font-bold mb-12">Best offers for you</h1>
+        <div class="flex flex-col lg:flex-row gap-6">
+            <div class="card w-full lg:w-3/6 flex flex-row">
+                <div class="card-body  bg-[#FFBF0F] text-black rounded-l-3xl">
+                    <h2 class="card-title font-black text-3xl lg:text-4xl inter">15% 0FF!</h2>
+                    <p class="font-semibold text-md lg:text-xl inter">on your next purchase</p>
+                    <p class="font-medium text-md lg:text-lg text-[#03071280] inter"> use by January 2024</p>
+                </div>
+                <div><img class="bg-[#FFBF0F]" src="images/cupon-devider.png" alt=""></div>
+                <div class="card-body  bg-[#FFBF0F] text-black rounded-r-3xl items-center justify-center">
+                    <h2 class="card-title font-bold text-2xl lg:text-4xl">NEW15</h2>
+                    <p class="font-medium text-lg text-[#03071280]">Coupon Code</p>
+                </div>
+            </div>
+            <div class="card w-full lg:w-3/6 flex flex-row">
+                <div class="card-body bg-[#F78C9C] text-black rounded-l-3xl">
+                    <h2 class="card-title font-black text-3xl lg:text-4xl inter">20% 0FF!</h2>
+                    <p class="font-semibold text-md lg:text-xl inter">on your next purchase</p>
+                    <p class="font-medium text-md lg:text-lg text-[#03071280] inter"> use by January 2024</p>
+                </div>
+                <div><img class="bg-[#F78C9C]" src="images/cupon-devider.png" alt=""></div>
+                <div class="card-body  bg-[#F78C9C] text-black rounded-r-3xl items-center justify-center">
+                    <h2 class="card-title font-bold text-2xl lg:text-4xl">Couple20</h2>
+                    <p class="font-medium text-md lg:text-lg text-[#03071280]">Coupon Code</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-16 mb-32">
+            <button class="btn btn-outline btn-success">See All Offers</button>
+        </div>
     </div>
     <main>
 

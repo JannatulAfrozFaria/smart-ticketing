@@ -43,6 +43,48 @@ function getElementTextById(elementId){
     const text = element.innerText;
     return text;
 }
+//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+//keyboard press
+function handleKeyboardButtonPress(){
+
+}
+function handleKeyboardButtonPress(event){
+    const customerPressed = event.key;
+    console.log( 'player pressed :' , customerPressed);
+
+    //stop the game if pressed 'Esc'
+    if(customerPressed === 'Escape'){
+        // gameOver();
+    }
+
+    //get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    console.log(playerPressed,currentAlphabet);
+
+    //---SHORT CUT APPROACH(WRITING COMMON FUNCTION FOR SCORE AND LIFE) for-----check matched or not
+    if(customerPressed === expectedAlphabet ){
+        console.log('you got a ticket');
+        const currentSeat = getTextElementValueById('current-seat');
+        const updatedSeat = currentSeat - 1;
+        setTextElementValueById('current-seat',updatedSeat);
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
+    }
+    else{
+        console.log('you lost a life');
+        const currentLife = getTextElementValueById('current-life');
+        const updatedLife = currentLife -1;
+        setTextElementValueById('current-life',updatedLife);
+        if(updatedLife === 0){
+            gameOver();
+        }
+    }
+}
 
 //-------------success-modal
 function successModal(){

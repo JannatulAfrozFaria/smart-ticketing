@@ -63,9 +63,10 @@ let grandTotal = 0;
 
 //when someone clicks on a ticket------:
 tickets.forEach(ticket =>{
-    ticket.addEventListener('click', () =>{
+    ticket.addEventListener('click', (e) =>{
         if(ticket.classList.contains('disabled')) return; //exit if ticket is already disabled
-
+        const clickValue = e.target.innerText;
+        console.log(clickValue);
     // Disable ticket and change background color
     ticket.classList.add('disabled');
     ticket.classList.remove('bg-[#F7F8F8]')
@@ -90,7 +91,7 @@ tickets.forEach(ticket =>{
     const entrySection = document.getElementById('entrySection');
     const newEntry = document.createElement('ul');
     newEntry.innerHTML = `
-     <li class="flex flex-row justify-between"><span id='nameSection'>A1</span> <span>Economy</span> 
+     <li class="flex flex-row justify-between"><span>${clickValue}</span> <span>Economy</span> 
      <span> 550 </span> </li>
     `
     entrySection.appendChild(newEntry);

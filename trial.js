@@ -34,3 +34,16 @@ if(findTicket() === selectARandomSeat()){
 
 const ticketChart = document.getElementById('ticket-chart');
 ticketChart.addEventListener('click',selectARandomSeat());
+
+
+
+
+// ///////////////
+//AppendChild
+const entrySection = document.getElementById('entrySection');
+const newEntry = document.createElement('ul');
+newEntry.innerHTML = `
+ <li class="flex flex-row justify-between"> <span> A1</span> <span>Economy</span> 
+ <span> 550 </span> </li>
+`
+entrySection.appendChild(newEntry);

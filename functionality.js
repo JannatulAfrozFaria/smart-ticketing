@@ -90,7 +90,7 @@ tickets.forEach(ticket =>{
     const entrySection = document.getElementById('entrySection');
     const newEntry = document.createElement('ul');
     newEntry.innerHTML = `
-     <li class="flex flex-row justify-between"> <span> A1</span> <span>Economy</span> 
+     <li class="flex flex-row justify-between"><span id='nameSection'>A1</span> <span>Economy</span> 
      <span> 550 </span> </li>
     `
     entrySection.appendChild(newEntry);
@@ -104,10 +104,10 @@ tickets.forEach(ticket =>{
     grandTotal += 550;
     updateTotal();
 
-    //***** */
-    if(document.querySelectorAll('.ticket.disabled').length >= 4){
-        document.getElementById('ticket').classList.add('disabled');
-    }
+    // //***** */
+    // if(document.querySelectorAll('.ticket.disabled').length = 4){
+    //     document.getElementById('ticket').classList.add('disabled');
+    //   }
     
     // Check if maximum tickets reached
     if (document.querySelectorAll('.ticket.disabled').length <= 4) {

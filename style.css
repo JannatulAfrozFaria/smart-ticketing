@@ -10,3 +10,10 @@
 .cursor{
     cursor: pointer;
 }
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.ticket:disabled {
+    cursor: not-allowed;
+}

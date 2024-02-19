@@ -43,48 +43,97 @@ function getElementTextById(elementId){
     const text = element.innerText;
     return text;
 }
-//--------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------
-//keyboard press
-function handleKeyboardButtonPress(){
+//setting the initial values of seat available and seat count
+setTextElementValueById('current-seat-count',0);
+setTextElementValueById('current-available-seat',40);
+setTextElementValueById('total',0);
 
-}
-function handleKeyboardButtonPress(event){
-    const customerPressed = event.key;
-    console.log( 'player pressed :' , customerPressed);
+//hide the entry primarily
+document.getElementById('entrySection').classList.add('hidden');
 
-    //stop the game if pressed 'Esc'
-    if(customerPressed === 'Escape'){
-        // gameOver();
+// Select the ticket entries list
+const ticketEntries = document.getElementById('ticketEntries');
+
+
+//--------------------------------------------------------------
+// Select all ticket buttons
+const tickets = document.querySelectorAll('.ticket');
+// Set initial total
+let grandTotal = 0;
+
+//when someone clicks on a ticket------:
+tickets.forEach(ticket =>{
+    ticket.addEventListener('click', () =>{
+        if(ticket.classList.contains('disabled')) return; //exit if ticket is already disabled
+
+    // Disable ticket and change background color
+    ticket.classList.add('disabled');
+    ticket.classList.remove('bg-[#F7F8F8]')
+    // ticket.style.backgroundColor = 'bg-[#1DD100]';
+    ticket.classList.add('bg-[#1DD100]','text-white');
+
+    //available seat Decrease
+    const currentAvailableSeat = getTextElementValueById('current-available-seat');
+    const updatedAvailableSeat = currentAvailableSeat - 1;
+    setTextElementValueById('current-available-seat',updatedAvailableSeat);
+
+    //seatcount increase
+    const currentSeatCount = getTextElementValueById('current-seat-count');
+    const newSeatCount = currentSeatCount + 1;
+    setTextElementValueById('current-seat-count',newSeatCount);
+
+    //entry of new ticket purchase
+    document.getElementById('entrySection').classList.remove('hidden');
+    document.getElementById('entrySection').classList.add('block');
+
+    //total price display
+    const currentTotal =getTextElementValueById('total');
+    const updatedTotal = currentTotal + 550;
+    setTextElementValueById('total',updatedTotal);
+
+    // Calculate total and display
+    grandTotal += 550;
+    updateTotal();
+    
+    // Check if maximum tickets reached
+    if (document.querySelectorAll('.ticket.disabled').length <= 4) {
+        document.getElementById('nextButton').disabled = false;
+      }
+    //   --------edition start
+    else if (document.querySelectorAll('.ticket.disabled').length >= 4) {
+        document.getElementById('nextButton').disabled = true;
+      }
+    });
+});
+
+// Function to update total and display
+function updateTotal() {
+    const couponCode = document.getElementById('couponCodeInput').value;
+    let discount = 0;
+    
+    if (couponCode === 'NEW15') {
+      discount = 0.15;
+    } else if (couponCode === 'Couple 20') {
+      discount = 0.20;
     }
-
-    //get the expected to press
-    const currentAlphabetElement = document.getElementById('current-alphabet');
-    const currentAlphabet = currentAlphabetElement.innerText;
-    const expectedAlphabet = currentAlphabet.toLowerCase();
-    console.log(playerPressed,currentAlphabet);
-
-    //---SHORT CUT APPROACH(WRITING COMMON FUNCTION FOR SCORE AND LIFE) for-----check matched or not
-    if(customerPressed === expectedAlphabet ){
-        console.log('you got a ticket');
-        const currentSeat = getTextElementValueById('current-seat');
-        const updatedSeat = currentSeat - 1;
-        setTextElementValueById('current-seat',updatedSeat);
-        removeBackgroundColorById(expectedAlphabet);
-        continueGame();
-    }
-    else{
-        console.log('you lost a life');
-        const currentLife = getTextElementValueById('current-life');
-        const updatedLife = currentLife -1;
-        setTextElementValueById('current-life',updatedLife);
-        if(updatedLife === 0){
-            gameOver();
-        }
-    }
-}
+    const discountedTotal = grandTotal * (1 - discount);
+    
+    document.getElementById('grandTotal').textContent = `BDT ${discountedTotal.toFixed(2)}`;
+  }
+// Event listener for coupon code input
+document.getElementById('couponCodeInput').addEventListener('input', () => {
+    const applyButton = document.getElementById('applyCouponButton');
+    applyButton.disabled = false;
+  });
+// Event listener for apply coupon button
+document.getElementById('applyCouponButton').addEventListener('click', () => {
+    updateTotal();
+  });
+// Event listener for phone number input
+document.getElementById('phoneNumberInput').addEventListener('input', () => {
+    const nextButton = document.getElementById('nextButton');
+    nextButton.disabled = false;
+  });
 
 //-------------success-modal
 function successModal(){
@@ -95,4 +144,9 @@ function successModal(){
 function goToHome(){
     hideElementById('success-modal');
     showElementById('home');
+
+    //reset score and life
+    setTextElementValueById('total', 0);
+    setTextElementValueById('grandTotal', 0);
 }
+

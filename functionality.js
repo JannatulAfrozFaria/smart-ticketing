@@ -102,12 +102,7 @@ tickets.forEach(ticket =>{
 
     // Calculate grand total and display
     grandTotal += 550;
-    updateTotal();
-
-    // //***** */
-    // if(document.querySelectorAll('.ticket.disabled').length = 4){
-    //     document.getElementById('ticket').classList.add('disabled');
-    //   }
+    updateGrandTotal();
     
     // Check if maximum tickets reached
     if (document.querySelectorAll('.ticket.disabled').length <= 4) {
@@ -121,8 +116,8 @@ tickets.forEach(ticket =>{
 });
 
 
-// Function to update total and display
-function updateTotal() {
+// Function to update Grand total and display
+function updateGrandTotal() {
     const couponCode = document.getElementById('couponCodeInput').value;
     let discount = 0;
     

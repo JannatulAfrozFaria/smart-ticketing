@@ -255,7 +255,7 @@
                         </div>
                         <hr class="my-3 bg-[#03071233] border-dashed">
                         <!-- ticket purchase entry ----Functionality-->
-                        <div id="entrySection" class="flex flex-row justify-between text-[#03071299] font-normal">
+                        <div id="entrySection" class="flex flex-col text-[#03071299] font-normal">
                             <!-- <p class="ticketName"></p>
                             <p>Economy</p>
                             <p id="ticketPrice"></p> -->
@@ -267,13 +267,15 @@
                             <p><span id="total"></span></p>
                         </div>
                         <!-- coupon code input-------------- functionality -->
-                        <div class="mb-6 lg:mb-0">
+                        <div id="discount-section" class="mb-6 lg:mb-0">
                             <label class="input flex flex-col lg:flex-row items-center gap-0 lg:gap-2 p-4 my-6">
                                 <input  id="couponCodeInput" type="text" class="grow" placeholder="Have any coupon?" />
                                 <button id="applyCouponButton" class="btn bg-[#1DD100] text-white hidden lg:block" disabled>Apply</button>
                             </label>
                             <button class="btn bg-[#1DD100] text-white block lg:hidden">Apply</button>
                         </div>
+                        <hr class="my-3 bg-[#03071233] border-dashed">
+                        <!-- Grand Total -->
                         <div class="flex flex-row justify-between text-base font-medium">
                             <p>Grand Total</p>
                             <p><span id="grandTotal"></span></p>
@@ -356,11 +358,6 @@
             </div>
         </div>
     </div>
-    <!--  EXTRA TRIAL-->
-    <div id="parentSection">
-        <!-- Existing content -->
-    </div>
-    <!--  -->
     <script src="functionality.js"></script>
 </body>
 </html>

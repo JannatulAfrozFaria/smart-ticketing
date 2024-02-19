@@ -86,14 +86,28 @@ tickets.forEach(ticket =>{
     document.getElementById('entrySection').classList.remove('hidden');
     document.getElementById('entrySection').classList.add('block');
 
+    //AppendChild
+    const entrySection = document.getElementById('entrySection');
+    const newEntry = document.createElement('ul');
+    newEntry.innerHTML = `
+     <li class="flex flex-row justify-between"> <span> A1</span> <span>Economy</span> 
+     <span> 550 </span> </li>
+    `
+    entrySection.appendChild(newEntry);
+
     //total price display
     const currentTotal =getTextElementValueById('total');
     const updatedTotal = currentTotal + 550;
     setTextElementValueById('total',updatedTotal);
 
-    // Calculate total and display
+    // Calculate grand total and display
     grandTotal += 550;
     updateTotal();
+
+    //***** */
+    if(document.querySelectorAll('.ticket.disabled').length >= 4){
+        document.getElementById('ticket').classList.add('disabled');
+    }
     
     // Check if maximum tickets reached
     if (document.querySelectorAll('.ticket.disabled').length <= 4) {
@@ -106,6 +120,7 @@ tickets.forEach(ticket =>{
     });
 });
 
+
 // Function to update total and display
 function updateTotal() {
     const couponCode = document.getElementById('couponCodeInput').value;
@@ -113,13 +128,17 @@ function updateTotal() {
     
     if (couponCode === 'NEW15') {
       discount = 0.15;
+      document.getElementById('discount-section').classList.add('hidden');
     } else if (couponCode === 'Couple 20') {
       discount = 0.20;
+      document.getElementById('discount-section').classList.add('hidden');
     }
     const discountedTotal = grandTotal * (1 - discount);
     
     document.getElementById('grandTotal').textContent = `BDT ${discountedTotal.toFixed(2)}`;
   }
+
+
 // Event listener for coupon code input
 document.getElementById('couponCodeInput').addEventListener('input', () => {
     const applyButton = document.getElementById('applyCouponButton');
@@ -134,6 +153,8 @@ document.getElementById('phoneNumberInput').addEventListener('input', () => {
     const nextButton = document.getElementById('nextButton');
     nextButton.disabled = false;
   });
+
+
 
 //-------------success-modal
 function successModal(){
